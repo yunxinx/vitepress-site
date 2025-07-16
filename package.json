@@ -1,0 +1,38 @@
+{
+    "name": "yuewei-notes",
+    "version": "2.0.0",
+    "description": "My some notes",
+    "main": "index.ts",
+    "scripts": {
+        "dev": "vitepress dev --host 0.0.0.0",
+        "build": "vitepress build",
+        "preview": "vitepress preview"
+    },
+    "keywords": [
+        "notes",
+        "thinks"
+    ],
+    "author": "yuewei",
+    "type": "module",
+    "license": "MIT",
+    "devDependencies": {
+        "@nolebase/vitepress-plugin-highlight-targeted-heading": "^2.17.1",
+        "@types/fs-extra": "^11.0.4",
+        "@types/node": "^22.15.27",
+        "fs-extra": "^11.3.0",
+        "globby": "^14.1.0",
+        "gray-matter": "^4.0.3",
+        "mermaid": "^11.6.0",
+        "pagefind": "^1.3.0",
+        "vitepress": "^1.6.3",
+        "vitepress-plugin-comment-with-giscus": "^1.1.15",
+        "vitepress-plugin-mermaid": "^2.0.17",
+        "vitepress-plugin-pagefind": "^0.4.13"
+    },
+    "dependencies": {
+        "nprogress-v2": "^1.1.10",
+        "viewerjs": "^1.11.7",
+        "vitepress-plugin-codeblocks-fold": "^1.2.35",
+        "vitepress-plugin-image-viewer": "^1.1.6"
+    }
+}

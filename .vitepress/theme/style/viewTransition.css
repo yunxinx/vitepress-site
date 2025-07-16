@@ -1,0 +1,142 @@
+/* 视图过渡动画样式 */
+
+/* 默认淡入淡出过渡效果 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 1000ms;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-fill-mode: both;
+}
+
+/* 淡入淡出动画 */
+.transition-fade ::view-transition-old(root) {
+  animation-name: gentle-fade-out;
+}
+
+.transition-fade ::view-transition-new(root) {
+  animation-name: gentle-fade-in;
+}
+
+@keyframes gentle-fade-out {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gentle-fade-in {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 滑动过渡动画 */
+.transition-slide ::view-transition-old(root) {
+  animation-name: slide-out;
+}
+
+.transition-slide ::view-transition-new(root) {
+  animation-name: slide-in;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 缩放过渡动画 */
+.transition-scale ::view-transition-old(root) {
+  animation-name: scale-out;
+}
+
+.transition-scale ::view-transition-new(root) {
+  animation-name: scale-in;
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 优化外观切换按钮样式 */
+.VPSwitchAppearance {
+  width: 22px !important;
+}
+
+.VPSwitchAppearance .check {
+  transform: none !important;
+}
+
+/* 为不支持视图过渡的浏览器提供回退样式 */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+/* 确保视图过渡在所有主题下都能正常工作 */
+html.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+}

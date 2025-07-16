@@ -1,0 +1,18 @@
+/* @import "https://ik.imagekit.io/0sh0bwbea5/FiraCode-Regular/result.css"; */
+/* @import "https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/firacode/6.2.0/fira_code.css"; */
+/* @import "https://ik.imagekit.io/0sh0bwbea5/OPPOSans-Regular/result.css"; */
+/* @import "https://fonto.yunxinx.cn/result.css"; */
+@import "https://fontsapi.zeoseven.com/2/main/result.css";
+
+@font-face {
+    font-family: "ZSFT-443";
+    src: url("https://fontsapi.zeoseven.com/443/main.woff2") format('woff2'),
+        url("https://fontsapi-storage.zeoseven.com/443/main.woff2") format('woff2');
+    font-display: swap;
+}
+
+:root[lang] {
+    --vp-font-family-base: 'LXGW ZhenKai', 'Microsoft Yahei', sans-serif, -apple-system;
+
+    --vp-font-family-mono: 'ZSFT-443';
+}
