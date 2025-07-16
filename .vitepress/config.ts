@@ -1,10 +1,15 @@
 import { defineConfig } from 'vitepress'
+import { loadEnv } from 'vite'
 import { getPosts } from './theme/serverUtils'
 import { MermaidMarkdown, MermaidPlugin } from 'vitepress-plugin-mermaid'
 import { chineseSearchOptimize, pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 //每页的文章数量
 const pageSize = 10
+
+// 加载环境变量
+const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '')
+Object.assign(process.env, env)
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -27,30 +32,25 @@ export default defineConfig({
       ['link', {
           rel: 'preconnect', href: 'https://fontsapi.zeoseven.com'
       }],
-      ['script', {
-          defer: '',
-          src: 'https://umami.134257.xyz/script.js',
-          'data-website-id': '0b44f00c-5e60-407c-bb46-cc0640a469a6'
-      }]
+      ['script', { type: 'text/javascript' }, '(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "sfl20yefit");']
     ],
 
     themeConfig: {
         posts: await getPosts(pageSize),
         logo: 'https://redocs.s3.bitiful.net/siteLogo.svg',
-        website: 'https://134257.xyz', //copyright link
-        // 评论的仓库地址 https://giscus.app/ 请按照这个官方初始化后覆盖
+        website: 'https://134257.xyz',
         comment: {
-            repo: 'yunxinx/write',
-            repoId: 'R_kgDOM8-yYQ',
-            categoryId: 'DIC_kwDOM8-yYc4Cq2Zr'
+            repo: process.env.VITE_GISCUS_REPO,
+            repoId: process.env.VITE_GISCUS_REPO_ID,
+            categoryId: process.env.VITE_GISCUS_CATEGORY_ID
         },
         nav: [
             { text: '主 页', link: '/' },
             { text: '分 类', link: '/pages/category' },
             { text: '归 档', link: '/pages/archives' },
             { text: '标 签', link: '/pages/tags' },
-            { text: '关 于', link: '/pages/about' }
-            // { text: 'Airene', link: 'http://airene.net' }  -- External link test
+            { text: '关 于', link: '/pages/about' },
+            { text: '我的笔记本', link: 'https://notes.134257.xyz' }
         ],
 
         //outline:[2,3],
