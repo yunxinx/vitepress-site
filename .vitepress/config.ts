@@ -49,7 +49,7 @@ export default defineConfig({
             { text: '分 类', link: '/pages/category' },
             { text: '归 档', link: '/pages/archives' },
             { text: '标 签', link: '/pages/tags' },
-            { text: '关 于', link: '/pages/about' },
+            { text: '关于&友链', link: '/pages/about' },
             { text: '我的笔记本', link: 'https://notes.134257.xyz' }
         ],
 
