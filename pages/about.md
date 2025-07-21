@@ -20,4 +20,4 @@ lastUpdated: false
 
 ## 友链
 
-1. [Tethys Plex](http://tethysplex.com/)：一名开发者的独白
+1. [Tethys Plex](http://tethysplex.com/)：我的花园。我的思想、故事与观念

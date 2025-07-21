@@ -26,6 +26,8 @@ export default defineConfig({
         hostname: 'https://134257.xyz'
     },
     head: [
+      ['meta', { name: 'author', content: 'yuewei' }],
+      ['meta', { name: 'description', content: '闲静则观书，欲知而望海' }],
       ['link', {
           rel: 'icon', href: 'https://www.helloimg.com/i/2024/10/19/67134f8f7b473.ico'
       }],
