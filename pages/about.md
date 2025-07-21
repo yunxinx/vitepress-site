@@ -1,6 +1,6 @@
 ---
 page: true
-title: 关于
+title: 关于&友链
 description: 这个网站的关于界面，我在这里会写一些可能无关紧要的话
 aside: false
 lastUpdated: false
@@ -17,3 +17,7 @@ lastUpdated: false
 这个页面下方开放了评论，拿来作为“留言墙”了 ^_^
 
 （如果没有加载出来，刷新一下页面可能会有帮助）
+
+## 友链
+
+1. [Tethys Plex](http://tethysplex.com/)：一名开发者的独白
